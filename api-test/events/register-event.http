@@ -1,10 +1,4 @@
-PUT http://localhost:8080/events/1 HTTP/1.1
+POST http://localhost:8080/events/1/register HTTP/1.1
 content-type: application/json
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QzQGdtYWlsLmNvbSIsImV4cCI6MTcwNTc1MDczNSwidXNlcklkIjo0fQ.EIYNw6dWnWoUeN5sKl62pG1CY9EwFI0kYn8cQv1s35Q
 
-{
-    "name": "Chnager",
-    "description": "ranger",
-    "location": "Warri",
-    "datetime": "2025-01-01T15:30:00.000Z"
-}
