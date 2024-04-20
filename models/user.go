@@ -6,8 +6,8 @@ import (
 
 	"errors"
 
-	"example.com/learning/db"
-	"example.com/learning/utils"
+	"github.com/bube054/go-gin-events-scheduler/db"
+	"github.com/bube054/go-gin-events-scheduler/utils"
 )
 
 type User struct {

@@ -1,8 +1,8 @@
 package routes
 
 import (
+	"github.com/bube054/go-gin-events-scheduler/middlewares"
 	"github.com/gin-gonic/gin"
-	"example.com/learning/middlewares"
 )
 
 func RegisterRoutes(server *gin.Engine) {

@@ -1,14 +1,10 @@
 package routes
 
 import (
-	"fmt"
-	_ "fmt"
 	"net/http"
 
-	// "strconv"
-
-	"example.com/learning/models"
-	"example.com/learning/utils"
+	"github.com/bube054/go-gin-events-scheduler/models"
+	"github.com/bube054/go-gin-events-scheduler/utils"
 	"github.com/gin-gonic/gin"
 )
 
@@ -18,7 +14,6 @@ func SignUp(ctx *gin.Context) {
 	err := ctx.ShouldBindJSON(&user)
 
 	if err != nil {
-		fmt.Println("1")
 		ctx.JSON(http.StatusBadRequest, gin.H{"message": "Could not parse request data!"})
 		return
 	}
@@ -26,13 +21,10 @@ func SignUp(ctx *gin.Context) {
 	err = user.Save()
 
 	if err != nil {
-		fmt.Println("2")
-
 		ctx.JSON(http.StatusInternalServerError, gin.H{"message": "Could not save user!"})
 		return
 	}
 
-	fmt.Println("3")
 	ctx.JSON(http.StatusCreated, gin.H{"message": "User created successfully"})
 }
 

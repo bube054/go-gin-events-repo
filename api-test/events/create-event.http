@@ -1,10 +1,14 @@
 POST http://localhost:8080/events HTTP/1.1
 content-type: application/json
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QzQGdtYWlsLmNvbSIsImV4cCI6MTcwNTc1MDczNSwidXNlcklkIjo0fQ.EIYNw6dWnWoUeN5sKl62pG1CY9EwFI0kYn8cQv1s35Q
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF0dGFoZ2J1YmVAZ21haWwuY29tIiwiZXhwIjoxNzEzNTkyODQyLCJ1c2VySWQiOjF9.B8Np3KCgVxD2wtSPgYnsG4cvDZP_ro0g5A-tTQOlWnM
 
 {
-    "name": "Test *******",
-    "description": "lorem description ********",
-    "location": "Warri",
-    "datetime": "2025-01-01T15:30:00.000Z"
+    "name": "Sports Event",
+    "description": "Witness thrilling matches and cheer for your favorite teams.",
+    "location": "London",
+    "datetime": "2024-09-05T15:30:00.000Z"
 }
+
+
+
+

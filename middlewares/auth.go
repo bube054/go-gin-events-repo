@@ -1,9 +1,10 @@
 package middlewares
 
 import (
-	"example.com/learning/utils"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/bube054/go-gin-events-scheduler/utils"
+	"github.com/gin-gonic/gin"
 )
 
 func Authenticate(ctx *gin.Context) {

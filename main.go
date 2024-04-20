@@ -3,8 +3,9 @@ package main
 import (
 	_ "fmt"
 
-	"example.com/learning/db"
-	"example.com/learning/routes"
+	"github.com/bube054/go-gin-events-scheduler/db"
+	"github.com/bube054/go-gin-events-scheduler/cron"
+	"github.com/bube054/go-gin-events-scheduler/routes"
 	"github.com/gin-gonic/gin"
 )
 
@@ -14,6 +15,7 @@ func main() {
 
 	routes.RegisterRoutes(server)
 
+	cron.PingDB()
+
 	server.Run(":8080")
 }
-

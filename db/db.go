@@ -13,7 +13,7 @@ var DB *sql.DB
 func InitDB() {
 	var err error
 
-	var dbUrl = "libsql://testing-turso-bubemi054.turso.io?authToken=eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIyMDI0LTAxLTE0VDIwOjA1OjA1LjIwODU4MDY2MloiLCJpZCI6IjNlNDA4N2YxLWExYmUtMTFlZS04ZTNiLTgyZDViNGZlYjEyYyJ9.Mduq3egH_v29VOZzaGOTWyeMOfLAG538Z_pLx6vwRtupOSwYYZ2J2unXiz23R4XYLKyxqQO3tk6YN8I_auUYBA"
+	var dbUrl = "libsql://events-scheduler-bube054.turso.io?authToken=eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3MTM1ODQ3OTAsImlkIjoiMDYzNDQ5MTAtYWNkMS00NTNmLTk2ZjQtNWZkNzc2MjM1M2E5In0.w1U_j064UUzBOI1ZI5v2BlNwqQE_dQR-NFgB90gBOjFVUuqD_WQIygDb2ffzx5Mt3WQZ0r0knlG3Ckp-3t3QBQ"
 	DB, err = sql.Open("libsql", dbUrl)
 	if err != nil {
 		panic(err.Error())
@@ -77,7 +77,6 @@ func CreateTables() {
 		fmt.Println(err.Error())
 		panic("Could not create registrations table.")
 	}
-
 
 	fmt.Println("All table(s) creation successful")
 }

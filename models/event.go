@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"example.com/learning/db"
+	"github.com/bube054/go-gin-events-scheduler/db"
 )
 
 type Event struct {

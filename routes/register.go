@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"example.com/learning/models"
+	"github.com/bube054/go-gin-events-scheduler/models"
 	"github.com/gin-gonic/gin"
 )
 
