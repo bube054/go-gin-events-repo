@@ -2,7 +2,9 @@ package db
 
 import (
 	"database/sql"
+	"errors"
 	"fmt"
+	"os"
 
 	_ "github.com/mattn/go-sqlite3"
 	_ "github.com/tursodatabase/libsql-client-go/libsql"
@@ -10,11 +12,26 @@ import (
 
 var DB *sql.DB
 
-func InitDB() {
+func InitDB() error {
 	var err error
 
-	var dbUrl = "libsql://events-scheduler-bube054.turso.io?authToken=eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3MTM1ODQ3OTAsImlkIjoiMDYzNDQ5MTAtYWNkMS00NTNmLTk2ZjQtNWZkNzc2MjM1M2E5In0.w1U_j064UUzBOI1ZI5v2BlNwqQE_dQR-NFgB90gBOjFVUuqD_WQIygDb2ffzx5Mt3WQZ0r0knlG3Ckp-3t3QBQ"
-	DB, err = sql.Open("libsql", dbUrl)
+	dbUrl := os.Getenv("TURSO_DB_URL")
+
+	if dbUrl == "" {
+		return errors.New("err loading TURSO_DB_URL from .env")
+	}
+
+	dbToken := os.Getenv("TURSO_AUTH_TOKEN")
+
+	if dbToken == "" {
+		return errors.New("err loading TURSO_AUTH_TOKEN from .env")
+	}
+
+	fmt.Println("TURSO_DB_URL: ", dbUrl)
+	fmt.Println("Token: ", dbToken)
+
+	var fmtDBUrl = dbUrl + "?authToken=" + dbToken
+	DB, err = sql.Open("libsql", fmtDBUrl)
 	if err != nil {
 		panic(err.Error())
 	}
@@ -23,8 +40,10 @@ func InitDB() {
 	DB.SetMaxIdleConns(5)
 
 	fmt.Println("Connection to db successful")
-	// DropTables()
+
 	CreateTables()
+
+	return nil
 }
 
 func CreateTables() {
