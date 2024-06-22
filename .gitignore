@@ -1,0 +1,36 @@
+## .gitignore
+
+# General
+.DS_Store
+*.swp
+*.pyc
+*.exe
+coverage.out
+debug.log
+*.crt
+*.key
+
+# Build Artifacts
+vendor/
+bin/
+build/
+
+# IDE and Editor Specific
+*.idea
+*.vscode
+Emacs*~
+Sublime Text Project.sublime-project
+
+# Environment Specific
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+
+# Testing
+testing/internal*
+
+# Version Control
+.git/logs
+.git/objects
